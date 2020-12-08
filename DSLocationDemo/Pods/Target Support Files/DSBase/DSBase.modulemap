@@ -1,0 +1,6 @@
+framework module DSBase {
+  umbrella header "DSBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module DSLocation {
+  umbrella header "DSLocation-umbrella.h"
+
+  export *
+  module * { export * }
+}

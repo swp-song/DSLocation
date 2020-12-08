@@ -1,0 +1,23 @@
+PODS:
+  - DSBase (0.0.2)
+  - DSLocation (0.0.1):
+    - DSBase
+
+DEPENDENCIES:
+  - DSLocation (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DSBase
+
+EXTERNAL SOURCES:
+  DSLocation:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DSBase: 3c19f5bd7b25619f2cd6da375ee7ef16ba82a573
+  DSLocation: 751caadaceddaae98b6d8bd78935624d8d866e98
+
+PODFILE CHECKSUM: 83e795d3968540f739361f8e0fc7d10974711086
+
+COCOAPODS: 1.10.0

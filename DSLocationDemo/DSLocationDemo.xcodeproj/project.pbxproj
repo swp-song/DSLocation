@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE8810D8AFA410DFEF1C6D46 /* Pods_DSLocationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EA3A64E5F67EDE4F966E4A /* Pods_DSLocationDemo.framework */; };
+		F156F6A4257FB32500C27D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156F6A3257FB32500C27D20 /* AppDelegate.swift */; };
+		F156F6A6257FB32500C27D20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156F6A5257FB32500C27D20 /* SceneDelegate.swift */; };
+		F156F6A8257FB32500C27D20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156F6A7257FB32500C27D20 /* ViewController.swift */; };
+		F156F6AB257FB32500C27D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F156F6A9257FB32500C27D20 /* Main.storyboard */; };
+		F156F6AD257FB32600C27D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F156F6AC257FB32600C27D20 /* Assets.xcassets */; };
+		F156F6B0257FB32600C27D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F156F6AE257FB32600C27D20 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22EA3A64E5F67EDE4F966E4A /* Pods_DSLocationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSLocationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38DFB32A74EEBCB9E460E911 /* Pods-DSLocationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSLocationDemo.release.xcconfig"; path = "Target Support Files/Pods-DSLocationDemo/Pods-DSLocationDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3FD5A71C1316ED7BA290116C /* Pods-DSLocationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSLocationDemo.debug.xcconfig"; path = "Target Support Files/Pods-DSLocationDemo/Pods-DSLocationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F156F6A0257FB32500C27D20 /* DSLocationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSLocationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F156F6A3257FB32500C27D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F156F6A5257FB32500C27D20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F156F6A7257FB32500C27D20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F156F6AA257FB32500C27D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F156F6AC257FB32600C27D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F156F6AF257FB32600C27D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F156F6B1257FB32600C27D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1EB2400257FB73F00EDC180 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F156F69D257FB32500C27D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8810D8AFA410DFEF1C6D46 /* Pods_DSLocationDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69FC03A6C7943565869EEF27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22EA3A64E5F67EDE4F966E4A /* Pods_DSLocationDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7060FD48B9F041F7B979E91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FD5A71C1316ED7BA290116C /* Pods-DSLocationDemo.debug.xcconfig */,
+				38DFB32A74EEBCB9E460E911 /* Pods-DSLocationDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F156F697257FB32500C27D20 = {
+			isa = PBXGroup;
+			children = (
+				F156F6A2257FB32500C27D20 /* DSLocationDemo */,
+				F156F6A1257FB32500C27D20 /* Products */,
+				C7060FD48B9F041F7B979E91 /* Pods */,
+				69FC03A6C7943565869EEF27 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F156F6A1257FB32500C27D20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F156F6A0257FB32500C27D20 /* DSLocationDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F156F6A2257FB32500C27D20 /* DSLocationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F156F6A3257FB32500C27D20 /* AppDelegate.swift */,
+				F156F6A5257FB32500C27D20 /* SceneDelegate.swift */,
+				F156F6A7257FB32500C27D20 /* ViewController.swift */,
+				F156F6A9257FB32500C27D20 /* Main.storyboard */,
+				F156F6AC257FB32600C27D20 /* Assets.xcassets */,
+				F156F6AE257FB32600C27D20 /* LaunchScreen.storyboard */,
+				F156F6B1257FB32600C27D20 /* Info.plist */,
+				F1EB2400257FB73F00EDC180 /* Location.gpx */,
+			);
+			path = DSLocationDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F156F69F257FB32500C27D20 /* DSLocationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F156F6B4257FB32600C27D20 /* Build configuration list for PBXNativeTarget "DSLocationDemo" */;
+			buildPhases = (
+				B19B13FA429B1354791B15EC /* [CP] Check Pods Manifest.lock */,
+				F156F69C257FB32500C27D20 /* Sources */,
+				F156F69D257FB32500C27D20 /* Frameworks */,
+				F156F69E257FB32500C27D20 /* Resources */,
+				8B7E3C658AA3B9443577BE2C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DSLocationDemo;
+			productName = DSLocationDemo;
+			productReference = F156F6A0257FB32500C27D20 /* DSLocationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F156F698257FB32500C27D20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					F156F69F257FB32500C27D20 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = F156F69B257FB32500C27D20 /* Build configuration list for PBXProject "DSLocationDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F156F697257FB32500C27D20;
+			productRefGroup = F156F6A1257FB32500C27D20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F156F69F257FB32500C27D20 /* DSLocationDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F156F69E257FB32500C27D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F156F6B0257FB32600C27D20 /* LaunchScreen.storyboard in Resources */,
+				F156F6AD257FB32600C27D20 /* Assets.xcassets in Resources */,
+				F156F6AB257FB32500C27D20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B7E3C658AA3B9443577BE2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSLocationDemo/Pods-DSLocationDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSLocationDemo/Pods-DSLocationDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DSLocationDemo/Pods-DSLocationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19B13FA429B1354791B15EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DSLocationDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F156F69C257FB32500C27D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F156F6A8257FB32500C27D20 /* ViewController.swift in Sources */,
+				F156F6A4257FB32500C27D20 /* AppDelegate.swift in Sources */,
+				F156F6A6257FB32500C27D20 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F156F6A9257FB32500C27D20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F156F6AA257FB32500C27D20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F156F6AE257FB32600C27D20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F156F6AF257FB32600C27D20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F156F6B2257FB32600C27D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F156F6B3257FB32600C27D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F156F6B5257FB32600C27D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD5A71C1316ED7BA290116C /* Pods-DSLocationDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U34V92LTL;
+				INFOPLIST_FILE = DSLocationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-swp.DSLocationDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F156F6B6257FB32600C27D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38DFB32A74EEBCB9E460E911 /* Pods-DSLocationDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U34V92LTL;
+				INFOPLIST_FILE = DSLocationDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-swp.DSLocationDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F156F69B257FB32500C27D20 /* Build configuration list for PBXProject "DSLocationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F156F6B2257FB32600C27D20 /* Debug */,
+				F156F6B3257FB32600C27D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F156F6B4257FB32600C27D20 /* Build configuration list for PBXNativeTarget "DSLocationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F156F6B5257FB32600C27D20 /* Debug */,
+				F156F6B6257FB32600C27D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F156F698257FB32500C27D20 /* Project object */;
+}
