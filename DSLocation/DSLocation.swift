@@ -9,56 +9,107 @@ import UIKit
 import DSBase
 import CoreLocation
 
-public class DSLocation: CLLocationManager {
+public enum DSLocationMode {
+    case DSLocationRequestWhenInUseAuthorization
+    case DSLocationRequestAlwaysAuthorization
+}
+open class DSLocation: NSObject {
     
-    lazy var locationManager : CLLocationManager = {
-        let locationManager = CLLocationManager()
-        locationManager.distanceFilter = 300
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-//        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-        return locationManager
-    }()
+    lazy var locationManager : CLLocationManager = CLLocationManager()
+    var locationMode : DSLocationMode = .DSLocationRequestWhenInUseAuthorization
     
     override public init() {
         super.init()
+        
+//        if #available(iOS 14.0, *) {
+////            self.ds.locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise")
+//            self.ds.locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise") { (error) in
+//
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
+        
+        setup()
+    }
+    
+    func setup() -> Void {
+        locationManager.distanceFilter = 300
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        if #available(iOS 14.0, *) {
+            locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise") { (error) in
+                print(error)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        locationManager.delegate = self
+    }
+}
+
+
+public extension DS where DSBase : DSLocation {
+    var locationManager : CLLocationManager {
+        self.ds.locationManager
+    }
+    
+    var locationMode : DSLocationMode {
+        set { self.ds.locationMode = newValue }
+        get { self.ds.locationMode }
     }
 }
 
 public extension DS where DSBase : DSLocation {
 
-    var locationManager : CLLocationManager {
-        set {
-            (self.ds as DSLocation).locationManager = newValue
-        }
-        get {
-            (self.ds as DSLocation).locationManager
-            
-        }
-    }
+    // MARK: -----------------------------------------
     
-    // MARK :
-
-    @discardableResult
-    func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    /// Transform WGS84 to GCJ02
+    /// - Parameters:
+    ///   - latitude: WGS84 latitude
+    ///   - longitude: WGS84 longitude
+    /// - Returns: GCJ02 location
+    @discardableResult func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
         return Self.transformWGS84ToGCJ02(latitude, longitude);
     }
     
-    @discardableResult
-    func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    
+    /// Transform WGS84 to GCJ02
+    /// - Parameter location: WGS84 location
+    /// - Returns: GCJ02 location
+    @discardableResult func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return Self.transformWGS84ToGCJ02(location);
     }
     
     func startUpdatingLocation() -> Void {
-        (self.ds as DSLocation).locationManager.startUpdatingLocation()
+        
+        switch self.ds.locationMode {
+        case .DSLocationRequestWhenInUseAuthorization:
+            self.ds.locationManager.requestWhenInUseAuthorization()
+            break
+        case .DSLocationRequestAlwaysAuthorization:
+            self.ds.locationManager.requestAlwaysAuthorization()
+            break
+        }
+        
+        self.ds.locationManager.startUpdatingLocation()
     }
     
-    // MARK: Static
-    @discardableResult
-    static func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    func stopUpdatingLocation() -> Void {
+        self.ds.locationManager.stopUpdatingLocation()
+    }
+    
+}
+
+public extension DS where DSBase : DSLocation  {
+    // MARK: --
+    
+    
+    /// Transform WGS84 to GCJ02
+    /// - Parameters:
+    ///   - latitude: WGS84 latitude
+    ///   - longitude: WGS84 longitude
+    /// - Returns: GCJ02 location
+    @discardableResult static func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
         let a = 6378245.0
         let e = 0.00669342162296594323
         let pi = Double.pi
@@ -78,12 +129,21 @@ public extension DS where DSBase : DSLocation {
         return CLLocationCoordinate2DMake(wgs84Latitude + aLatitude, wgs84Longitude + aLongitude)
     }
     
-   @discardableResult
-    static func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    /// Transform WGS84 to GCJ02
+    /// - Parameter location: WGS84
+    /// - Returns: GCJ02
+   @discardableResult static func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return transformWGS84ToGCJ02(location.latitude, location.longitude)
     }
+}
+
+private extension DS where DSBase : DSLocation {
     
-    // MARK: Private
+    /// transformLatitude
+    /// - Parameters:
+    ///   - x: latitude Offset
+    ///   - y: longtitude Offset
+    /// - Returns: latitude
     private static func transformLatitude(_ x : Double, _ y : Double) -> Double {
         
         let pi = Double.pi
@@ -99,6 +159,11 @@ public extension DS where DSBase : DSLocation {
         return latitude
     }
     
+    /// transformLongitude
+    /// - Parameters:
+    ///   - x: latitude Offset
+    ///   - y: longtitude Offset
+    /// - Returns: longtitude
     private static func transformLongitude(_ x : Double, _ y : Double) -> Double {
         let pi = Double.pi
         var longtitude = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y
@@ -111,12 +176,41 @@ public extension DS where DSBase : DSLocation {
         longtitude += (300.0 * sin(x / 30.0 * pi)) * 2.0 / 3.0
         return longtitude
     }
-    
 }
 
 
 extension DSLocation : CLLocationManagerDelegate {
     
+    
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            break
+        case .restricted:
+            break
+        case .denied:
+            break
+        case .authorizedAlways:
+            break
+        case .authorizedWhenInUse:
+            break
+        default:
+            break
+        }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.ds.stopUpdatingLocation()
+        if let location = locations.first {
+            print(location)
+        }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    
+   
 }
 
 extension DSLocation : DSCompatible { }
