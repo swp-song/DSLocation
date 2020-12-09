@@ -4,3 +4,4 @@ framework module DSLocation {
   export *
   module * { export * }
 }
+

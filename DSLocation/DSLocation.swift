@@ -6,14 +6,20 @@
 //
 
 import UIKit
-import CoreLocation
 import DSBase
+import CoreLocation
 
 public class DSLocation: CLLocationManager {
     
     lazy var locationManager : CLLocationManager = {
         let locationManager = CLLocationManager()
-//        locationManager.delegate = self
+        locationManager.distanceFilter = 300
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+//        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
         return locationManager
     }()
     
@@ -22,19 +28,98 @@ public class DSLocation: CLLocationManager {
     }
 }
 
-
 public extension DS where DSBase : DSLocation {
 
-    var locationManager : CLLocationManager? {  (self.ds as DSLocation).locationManager }
+    var locationManager : CLLocationManager {
+        set {
+            (self.ds as DSLocation).locationManager = newValue
+        }
+        get {
+            (self.ds as DSLocation).locationManager
+            
+        }
+    }
+    
+    // MARK :
+
+    @discardableResult
+    func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+        return Self.transformWGS84ToGCJ02(latitude, longitude);
+    }
+    
+    @discardableResult
+    func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        return Self.transformWGS84ToGCJ02(location);
+    }
+    
+    func startUpdatingLocation() -> Void {
+        (self.ds as DSLocation).locationManager.startUpdatingLocation()
+    }
+    
+    // MARK: Static
+    @discardableResult
+    static func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+        let a = 6378245.0
+        let e = 0.00669342162296594323
+        let pi = Double.pi
+
+        let wgs84Latitude  = latitude
+        let wgs84Longitude = longitude
+
+        var aLatitude  = transformLatitude(wgs84Longitude - 105.0, wgs84Latitude - 35.0)
+        var aLongitude = transformLongitude(wgs84Longitude - 105.0, wgs84Latitude - 35.0)
+
+        let radLat = wgs84Latitude / 180.0 * pi
+        var magic  = sin(radLat)
+        magic = 1 - e * magic * magic
+        let sqrtMagic = sqrt(magic)
+        aLatitude  = (aLatitude * 180.0) / ((a * (1 - e)) / (magic * sqrtMagic) * pi)
+        aLongitude = (aLongitude * 180.0) / (a / sqrtMagic * cos(radLat) * pi)
+        return CLLocationCoordinate2DMake(wgs84Latitude + aLatitude, wgs84Longitude + aLongitude)
+    }
+    
+   @discardableResult
+    static func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        return transformWGS84ToGCJ02(location.latitude, location.longitude)
+    }
+    
+    // MARK: Private
+    private static func transformLatitude(_ x : Double, _ y : Double) -> Double {
+        
+        let pi = Double.pi
+        var latitude = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y
+        latitude += 0.2 * sqrt(fabs(x))
+        
+        latitude += (20.0 * sin(6.0 * x * pi)) * 2.0 / 3.0
+        latitude += (20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0
+        latitude += (20.0 * sin(y * pi)) * 2.0 / 3.0
+        latitude += (40.0 * sin(y / 3.0 * pi)) * 2.0 / 3.0
+        latitude += (160.0 * sin(y / 12.0 * pi)) * 2.0 / 3.0
+        latitude += (320 * sin(y * pi / 30.0)) * 2.0 / 3.0
+        return latitude
+    }
+    
+    private static func transformLongitude(_ x : Double, _ y : Double) -> Double {
+        let pi = Double.pi
+        var longtitude = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y
+        longtitude +=  0.1 * sqrt(fabs(x))
+        longtitude += (20.0 * sin(6.0 * x * pi)) * 2.0 / 3.0
+        longtitude += (20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0
+        longtitude += (20.0 * sin(x * pi)) * 2.0 / 3.0
+        longtitude += (40.0 * sin(x / 3.0 * pi)) * 2.0 / 3.0
+        longtitude += (150.0 * sin(x / 12.0 * pi)) * 2.0 / 3.0
+        longtitude += (300.0 * sin(x / 30.0 * pi)) * 2.0 / 3.0
+        return longtitude
+    }
     
 }
 
-public extension DS where DSBase : CLLocationManager {
+
+extension DSLocation : CLLocationManagerDelegate {
     
 }
 
-
-extension CLLocationManager : DSCompatible { }
+extension DSLocation : DSCompatible { }
 
 
 
