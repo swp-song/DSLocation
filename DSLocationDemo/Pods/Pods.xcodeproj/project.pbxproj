@@ -7,39 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C6A1AF2F4E8003BB977214325B16253 /* DSBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10313ACE0FC61EAF62B28828373D139C /* DSBase.framework */; };
+		0792902A48819975CEB8D68213A8C8DE /* DSLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB10CF52F4D95906E0090F1213D45410 /* DSLocation.swift */; };
 		281A4258A061112BA1D5D91AABE61B1A /* DSBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7889D1D47D2EC012B8DB1B9E1FAE850 /* DSBase.swift */; };
+		2EBB96669B5B1D16042CDD8A06094E7B /* DSLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91FF55B85A99AF8BCA1335E477DBFF5E /* DSLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36E83E2594D9E235B9F9EADD11F505A8 /* DSBase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A6F46F5B90724D7BC8091F24F4193B7 /* DSBase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37490E401308A993742BE5DC61EC58EB /* DSLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9652CE035B7A3283E267DBFF641BA7 /* DSLocationModel.swift */; };
-		69657514A3BBC9B289D2CDFD46C5D0BE /* DSLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD169AD4B4D043388C3F7319D98FB528 /* DSLocation.swift */; };
-		78F325BC54643CD28DAB3E96E5AF79DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC9B23E6257F9BA21311750D37BCA601 /* Foundation.framework */; };
+		659E40C98A8DEF8D6223423A448BEB90 /* DSLocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45980AC229EA98095D1A144E166064A /* DSLocationUtil.swift */; };
+		801400DB7F5F8F15910D2FFDD423A0C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E23A2DCB09C46A5FEA37A7A7D75025F /* CoreLocation.framework */; };
 		84E7C8099E44CAB58D29081622462822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC9B23E6257F9BA21311750D37BCA601 /* Foundation.framework */; };
-		9BD3DB381389B8CFAB6FDA59DBF12131 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B27D942974E82EAB9E8E0F984D9A55 /* UIKit.framework */; };
+		A1F0D2EC43B7829DCB81B6995A16F106 /* DSLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168114EB318571EF8FD3F0087ECE3254 /* DSLocationModel.swift */; };
+		A2F1FE897DF8C604C7A9CA322C5841A3 /* DSLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E67909394A00C0274F59DAE631B87D /* DSLocation-dummy.m */; };
+		ACF9C9B25F94B5E583BA46B8921AEAB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B27D942974E82EAB9E8E0F984D9A55 /* UIKit.framework */; };
 		AF10F3F2EFE74A4CFA237CE68D97F8C5 /* Pods-DSLocationDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA68313704292C89BC7E88C7AB08755 /* Pods-DSLocationDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C80BB13480164E999D2274895A34CDD6 /* DSLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 792B6451FAAAA19F662ECBDD8D8F1A14 /* DSLocation-dummy.m */; };
+		B332077E35B382BC42845FE316D2D9AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC9B23E6257F9BA21311750D37BCA601 /* Foundation.framework */; };
 		CACF11ABC22980CEC4F26573B61CC0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC9B23E6257F9BA21311750D37BCA601 /* Foundation.framework */; };
-		DCDEE3101BA6B04327EA68E40550ADB4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E23A2DCB09C46A5FEA37A7A7D75025F /* CoreLocation.framework */; };
-		DDF416B946B29E812DD223E42A668F61 /* DSLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F038A4A3C213007F55A995322E2CD9B /* DSLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0669DEDF40DB3A536C31D36D467919D /* DSBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10313ACE0FC61EAF62B28828373D139C /* DSBase.framework */; };
 		EDBAEA5EF50BDBD56D8D1415E1918289 /* Pods-DSLocationDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 174D4F949D65FE9BEACD1E66FC12BEE2 /* Pods-DSLocationDemo-dummy.m */; };
 		FAF12D1E7E18D289BB759ECDB891E74B /* DSBase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C208186233243DC0EA7E33C2A5AC4 /* DSBase-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0F7B916F48FF701BAD8A671504751570 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 64181AB5F682C0C5FD834C68E7C45633;
-			remoteInfo = DSLocation;
-		};
-		21522BC6A32E0491A3CE0453A3322D8C /* PBXContainerItemProxy */ = {
+		4942D15813519C9DEB8C6735D62D2D1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E5B76D87A778729968DC5655145D3A3C;
 			remoteInfo = DSBase;
 		};
-		91CE7E895040FB4CC716CD77D13D620B /* PBXContainerItemProxy */ = {
+		651466189185A82F6BE9CD243B21A00A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64181AB5F682C0C5FD834C68E7C45633;
+			remoteInfo = DSLocation;
+		};
+		DDC52D05B30236644DC3A851C73B510B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -52,39 +53,40 @@
 		00B34616FDCCFFF7F4D69F22AABE6DF5 /* Pods-DSLocationDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DSLocationDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		0ECE848AC970263DF2B2DA6B25BCD7B6 /* DSBase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DSBase.modulemap; sourceTree = "<group>"; };
 		10313ACE0FC61EAF62B28828373D139C /* DSBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DSBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		168114EB318571EF8FD3F0087ECE3254 /* DSLocationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DSLocationModel.swift; sourceTree = "<group>"; };
 		174D4F949D65FE9BEACD1E66FC12BEE2 /* Pods-DSLocationDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DSLocationDemo-dummy.m"; sourceTree = "<group>"; };
 		1DA68313704292C89BC7E88C7AB08755 /* Pods-DSLocationDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DSLocationDemo-umbrella.h"; sourceTree = "<group>"; };
-		2F68F6D56B3ED523920655B62FC5C1D3 /* DSLocation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DSLocation.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		37E67909394A00C0274F59DAE631B87D /* DSLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSLocation-dummy.m"; sourceTree = "<group>"; };
+		4067A9682F52805709499DC239771ADC /* DSLocation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLocation-prefix.pch"; sourceTree = "<group>"; };
+		5B11DE9790D325028F787D5FE33FD424 /* DSLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLocation.debug.xcconfig; sourceTree = "<group>"; };
 		5D03EA0CC9E270263ABA36ADA100F76F /* DSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSBase.release.xcconfig; sourceTree = "<group>"; };
 		5D2C208186233243DC0EA7E33C2A5AC4 /* DSBase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSBase-dummy.m"; sourceTree = "<group>"; };
-		5F038A4A3C213007F55A995322E2CD9B /* DSLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLocation-umbrella.h"; sourceTree = "<group>"; };
-		720F165EF099BBA1EA73867FD06DD6A4 /* DSLocation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLocation-prefix.pch"; sourceTree = "<group>"; };
 		75BBA076716431E59734F5A35C6C2D25 /* Pods-DSLocationDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DSLocationDemo-Info.plist"; sourceTree = "<group>"; };
 		778FD30AD413D7668BF3BC8D222C6DDA /* DSBase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DSBase-Info.plist"; sourceTree = "<group>"; };
-		792B6451FAAAA19F662ECBDD8D8F1A14 /* DSLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSLocation-dummy.m"; sourceTree = "<group>"; };
-		820C8D52261F80AC222983CE374F0B60 /* DSLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLocation.release.xcconfig; sourceTree = "<group>"; };
-		8A4DA0AFF74049D2F99FC17624AAD6F4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7B2E3AB6E46A92036DC8822037426142 /* DSLocation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DSLocation.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		856FAD004033FD16A8E6ADCC23A25504 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8578FDC367F965D35CAF2E378646D534 /* DSLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLocation.release.xcconfig; sourceTree = "<group>"; };
 		8A6F46F5B90724D7BC8091F24F4193B7 /* DSBase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSBase-umbrella.h"; sourceTree = "<group>"; };
 		8E23A2DCB09C46A5FEA37A7A7D75025F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		91FF55B85A99AF8BCA1335E477DBFF5E /* DSLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLocation-umbrella.h"; sourceTree = "<group>"; };
 		95422711E98212E02B672EDC2A5435EA /* DSLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DSLocation.framework; path = DSLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97AA896D26F9E0812CFB787BA699B8EC /* DSLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DSLocation.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0191A9D84755EF9104C057AD8505AD0 /* DSLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLocation.debug.xcconfig; sourceTree = "<group>"; };
 		A70DB2EA19EFB4D36B7B94B55D15DE6C /* Pods-DSLocationDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DSLocationDemo.modulemap"; sourceTree = "<group>"; };
 		AB09D5D4BAA1EDE898504D99BE2AD2F1 /* DSBase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSBase-prefix.pch"; sourceTree = "<group>"; };
 		AD32C48EB2AB4A8E00134CDB64813973 /* DSBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DSBase.framework; path = DSBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD9652CE035B7A3283E267DBFF641BA7 /* DSLocationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSLocationModel.swift; path = DSLocation/DSLocationModel.swift; sourceTree = "<group>"; };
-		BBB12068D105F5B9552B15DDE612A35E /* DSLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DSLocation.modulemap; sourceTree = "<group>"; };
+		BC7EFDD4F464E6DF5F96C5D493ED7FF1 /* DSLocation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DSLocation-Info.plist"; sourceTree = "<group>"; };
+		C45980AC229EA98095D1A144E166064A /* DSLocationUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DSLocationUtil.swift; sourceTree = "<group>"; };
 		D284508109BAE1118252D010532FE047 /* Pods-DSLocationDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DSLocationDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D529B8242B7AF2B4CD0650247F9B5654 /* Pods-DSLocationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DSLocationDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		D6932DECE1C22804623DD0C704A52D51 /* DSLocation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DSLocation-Info.plist"; sourceTree = "<group>"; };
 		D8F2518941D018BD0D8F243EA29EC030 /* DSBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSBase.debug.xcconfig; sourceTree = "<group>"; };
-		DC1296C66CD593D927D9158BEACE4444 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D92E52B83464C73CBFCA085105A0D1AD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		DC9B23E6257F9BA21311750D37BCA601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E0B27D942974E82EAB9E8E0F984D9A55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E427FA6A9D1B6759C30274C470712AEC /* Pods-DSLocationDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DSLocationDemo-frameworks.sh"; sourceTree = "<group>"; };
 		E7889D1D47D2EC012B8DB1B9E1FAE850 /* DSBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSBase.swift; path = DSBase/Code/DSBase.swift; sourceTree = "<group>"; };
+		EB10CF52F4D95906E0090F1213D45410 /* DSLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DSLocation.swift; sourceTree = "<group>"; };
 		F5D8DF9CA995E2E66346BA4F3BF47E3E /* Pods_DSLocationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DSLocationDemo.framework; path = "Pods-DSLocationDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD169AD4B4D043388C3F7319D98FB528 /* DSLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSLocation.swift; path = DSLocation/DSLocation.swift; sourceTree = "<group>"; };
 		FE1171046F56A707B413F9CD115D88D7 /* Pods-DSLocationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DSLocationDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,22 +99,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2928BE7D9DFA60FC00BCD013CC46A451 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DCDEE3101BA6B04327EA68E40550ADB4 /* CoreLocation.framework in Frameworks */,
-				1C6A1AF2F4E8003BB977214325B16253 /* DSBase.framework in Frameworks */,
-				78F325BC54643CD28DAB3E96E5AF79DC /* Foundation.framework in Frameworks */,
-				9BD3DB381389B8CFAB6FDA59DBF12131 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5DC3AD4B4F561DCA353A91AC178D0B5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84E7C8099E44CAB58D29081622462822 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDBD2CC2E9F7116C1A6F7C0445B7EDFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801400DB7F5F8F15910D2FFDD423A0C4 /* CoreLocation.framework in Frameworks */,
+				D0669DEDF40DB3A536C31D36D467919D /* DSBase.framework in Frameworks */,
+				B332077E35B382BC42845FE316D2D9AD /* Foundation.framework in Frameworks */,
+				ACF9C9B25F94B5E583BA46B8921AEAB8 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,15 @@
 			path = "Target Support Files/Pods-DSLocationDemo";
 			sourceTree = "<group>";
 		};
+		2572AE2148AB857897171703E755DAF8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EB10CF52F4D95906E0090F1213D45410 /* DSLocation.swift */,
+			);
+			name = Main;
+			path = DSLocation/Main;
+			sourceTree = "<group>";
+		};
 		3A56B843250F248884D3F46F8F460777 /* DSBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,14 +175,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5AF953858612B8C23B8761210E065968 /* Pod */ = {
+		429237178043530D245B9DC098DA0B95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2F68F6D56B3ED523920655B62FC5C1D3 /* DSLocation.podspec */,
-				8A4DA0AFF74049D2F99FC17624AAD6F4 /* LICENSE */,
-				DC1296C66CD593D927D9158BEACE4444 /* README.md */,
+				168114EB318571EF8FD3F0087ECE3254 /* DSLocationModel.swift */,
+			);
+			name = Model;
+			path = DSLocation/Model;
+			sourceTree = "<group>";
+		};
+		62FED76BBA8C4F31BDDD88838B78F83D /* DSLocation */ = {
+			isa = PBXGroup;
+			children = (
+				2572AE2148AB857897171703E755DAF8 /* Main */,
+				429237178043530D245B9DC098DA0B95 /* Model */,
+				67815A8EEB5908EDBF45AAB935CCDF35 /* Pod */,
+				F0513D83C9291FC2D698BC28F8A9F7BA /* Support Files */,
+				7975BF55FE4582D5AB57C661319F9E39 /* Util */,
+			);
+			name = DSLocation;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		67815A8EEB5908EDBF45AAB935CCDF35 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7B2E3AB6E46A92036DC8822037426142 /* DSLocation.podspec */,
+				856FAD004033FD16A8E6ADCC23A25504 /* LICENSE */,
+				D92E52B83464C73CBFCA085105A0D1AD /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		7975BF55FE4582D5AB57C661319F9E39 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C45980AC229EA98095D1A144E166064A /* DSLocationUtil.swift */,
+			);
+			name = Util;
+			path = DSLocation/Util;
 			sourceTree = "<group>";
 		};
 		B7558E743570A7E391EC5F5FF401E293 /* Support Files */ = {
@@ -197,36 +239,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C31FE2B3AA1C194A83C60AEA7A72C2D6 /* DSLocation */ = {
-			isa = PBXGroup;
-			children = (
-				FD169AD4B4D043388C3F7319D98FB528 /* DSLocation.swift */,
-				AD9652CE035B7A3283E267DBFF641BA7 /* DSLocationModel.swift */,
-				5AF953858612B8C23B8761210E065968 /* Pod */,
-				DD4E7C174CE03C7D90C439EA3A639000 /* Support Files */,
-			);
-			name = DSLocation;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D9DB4FF727F8A243B247B7D4FB313C36 /* Development Pods */,
+				F18F87EEDDF4F393894324EC3591CB5A /* Development Pods */,
 				DA027D60B3CEC0BE355B49826624E697 /* Frameworks */,
 				C17B8E9FA7D39BE8AF25705BFBCE63B2 /* Pods */,
 				41B646BBCE39C6AE5CF4A59A06E9795C /* Products */,
 				0EB116CC8287E0D77025C2F15E762781 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D9DB4FF727F8A243B247B7D4FB313C36 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C31FE2B3AA1C194A83C60AEA7A72C2D6 /* DSLocation */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		DA027D60B3CEC0BE355B49826624E697 /* Frameworks */ = {
@@ -238,21 +260,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DD4E7C174CE03C7D90C439EA3A639000 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BBB12068D105F5B9552B15DDE612A35E /* DSLocation.modulemap */,
-				792B6451FAAAA19F662ECBDD8D8F1A14 /* DSLocation-dummy.m */,
-				D6932DECE1C22804623DD0C704A52D51 /* DSLocation-Info.plist */,
-				720F165EF099BBA1EA73867FD06DD6A4 /* DSLocation-prefix.pch */,
-				5F038A4A3C213007F55A995322E2CD9B /* DSLocation-umbrella.h */,
-				A0191A9D84755EF9104C057AD8505AD0 /* DSLocation.debug.xcconfig */,
-				820C8D52261F80AC222983CE374F0B60 /* DSLocation.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "DSLocationDemo/Pods/Target Support Files/DSLocation";
-			sourceTree = "<group>";
-		};
 		ED0A3DBDCE59C406986169D646BF4E19 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +268,29 @@
 				E0B27D942974E82EAB9E8E0F984D9A55 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		F0513D83C9291FC2D698BC28F8A9F7BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97AA896D26F9E0812CFB787BA699B8EC /* DSLocation.modulemap */,
+				37E67909394A00C0274F59DAE631B87D /* DSLocation-dummy.m */,
+				BC7EFDD4F464E6DF5F96C5D493ED7FF1 /* DSLocation-Info.plist */,
+				4067A9682F52805709499DC239771ADC /* DSLocation-prefix.pch */,
+				91FF55B85A99AF8BCA1335E477DBFF5E /* DSLocation-umbrella.h */,
+				5B11DE9790D325028F787D5FE33FD424 /* DSLocation.debug.xcconfig */,
+				8578FDC367F965D35CAF2E378646D534 /* DSLocation.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "DSLocationDemo/Pods/Target Support Files/DSLocation";
+			sourceTree = "<group>";
+		};
+		F18F87EEDDF4F393894324EC3591CB5A /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62FED76BBA8C4F31BDDD88838B78F83D /* DSLocation */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +304,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		915B37BE7CF19504047FCC485642E872 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBB96669B5B1D16042CDD8A06094E7B /* DSLocation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92510346AF62B263F1428229C473D683 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,30 +320,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2A4F0B2AFE34B9C340E7253ABB1C47C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDF416B946B29E812DD223E42A668F61 /* DSLocation-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		64181AB5F682C0C5FD834C68E7C45633 /* DSLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E49AB0C90F7DEDDEA0ADB29063A6D636 /* Build configuration list for PBXNativeTarget "DSLocation" */;
+			buildConfigurationList = 5F5E70C65B09937ADA56E7B01F6D7CBB /* Build configuration list for PBXNativeTarget "DSLocation" */;
 			buildPhases = (
-				C2A4F0B2AFE34B9C340E7253ABB1C47C /* Headers */,
-				1C9495B3E816F88D4D6F69E02E267F5B /* Sources */,
-				2928BE7D9DFA60FC00BCD013CC46A451 /* Frameworks */,
-				07E8513968E630EB564A504C3154DDD2 /* Resources */,
+				915B37BE7CF19504047FCC485642E872 /* Headers */,
+				851CA33DC002378A4A199324CD2A8BE5 /* Sources */,
+				EDBD2CC2E9F7116C1A6F7C0445B7EDFE /* Frameworks */,
+				0FEDF76E46B1A164EBACDD40665B5240 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4499711E48E4EB7A404A909107DC937 /* PBXTargetDependency */,
+				6FA6C5121C96A630DEB7EF53F07B7B0E /* PBXTargetDependency */,
 			);
 			name = DSLocation;
 			productName = DSLocation;
@@ -324,8 +354,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				1D7D260888A51153F1196A2D94C69BD7 /* PBXTargetDependency */,
-				8ABA5C5C31C37DC78ACF4A4982F0A2A6 /* PBXTargetDependency */,
+				D461CED4BBF177DE5423844BBD0A212E /* PBXTargetDependency */,
+				3DFD099688BBEEC0ADE37A71BD748EF1 /* PBXTargetDependency */,
 			);
 			name = "Pods-DSLocationDemo";
 			productName = "Pods-DSLocationDemo";
@@ -380,7 +410,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		07E8513968E630EB564A504C3154DDD2 /* Resources */ = {
+		0FEDF76E46B1A164EBACDD40665B5240 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,13 +442,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C9495B3E816F88D4D6F69E02E267F5B /* Sources */ = {
+		851CA33DC002378A4A199324CD2A8BE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80BB13480164E999D2274895A34CDD6 /* DSLocation-dummy.m in Sources */,
-				69657514A3BBC9B289D2CDFD46C5D0BE /* DSLocation.swift in Sources */,
-				37490E401308A993742BE5DC61EC58EB /* DSLocationModel.swift in Sources */,
+				A2F1FE897DF8C604C7A9CA322C5841A3 /* DSLocation-dummy.m in Sources */,
+				0792902A48819975CEB8D68213A8C8DE /* DSLocation.swift in Sources */,
+				A1F0D2EC43B7829DCB81B6995A16F106 /* DSLocationModel.swift in Sources */,
+				659E40C98A8DEF8D6223423A448BEB90 /* DSLocationUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,27 +465,63 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D7D260888A51153F1196A2D94C69BD7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DSBase;
-			target = E5B76D87A778729968DC5655145D3A3C /* DSBase */;
-			targetProxy = 21522BC6A32E0491A3CE0453A3322D8C /* PBXContainerItemProxy */;
-		};
-		8ABA5C5C31C37DC78ACF4A4982F0A2A6 /* PBXTargetDependency */ = {
+		3DFD099688BBEEC0ADE37A71BD748EF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DSLocation;
 			target = 64181AB5F682C0C5FD834C68E7C45633 /* DSLocation */;
-			targetProxy = 0F7B916F48FF701BAD8A671504751570 /* PBXContainerItemProxy */;
+			targetProxy = 651466189185A82F6BE9CD243B21A00A /* PBXContainerItemProxy */;
 		};
-		F4499711E48E4EB7A404A909107DC937 /* PBXTargetDependency */ = {
+		6FA6C5121C96A630DEB7EF53F07B7B0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DSBase;
 			target = E5B76D87A778729968DC5655145D3A3C /* DSBase */;
-			targetProxy = 91CE7E895040FB4CC716CD77D13D620B /* PBXContainerItemProxy */;
+			targetProxy = DDC52D05B30236644DC3A851C73B510B /* PBXContainerItemProxy */;
+		};
+		D461CED4BBF177DE5423844BBD0A212E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DSBase;
+			target = E5B76D87A778729968DC5655145D3A3C /* DSBase */;
+			targetProxy = 4942D15813519C9DEB8C6735D62D2D1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		147ED1E0816C4A79DE94B5CDB24B6F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8578FDC367F965D35CAF2E378646D534 /* DSLocation.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DSLocation/DSLocation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DSLocation/DSLocation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DSLocation/DSLocation.modulemap";
+				PRODUCT_MODULE_NAME = DSLocation;
+				PRODUCT_NAME = DSLocation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -619,9 +686,9 @@
 			};
 			name = Release;
 		};
-		713424E8986F4CD25148F04078B00283 /* Debug */ = {
+		A8C465DC5F6B4ACA5DB71DEA81E732BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0191A9D84755EF9104C057AD8505AD0 /* DSLocation.debug.xcconfig */;
+			baseConfigurationReference = 5B11DE9790D325028F787D5FE33FD424 /* DSLocation.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -764,42 +831,6 @@
 			};
 			name = Release;
 		};
-		FC775CFF84E4FB47666A3CFD155A43D3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 820C8D52261F80AC222983CE374F0B60 /* DSLocation.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DSLocation/DSLocation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DSLocation/DSLocation-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/DSLocation/DSLocation.modulemap";
-				PRODUCT_MODULE_NAME = DSLocation;
-				PRODUCT_NAME = DSLocation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -821,20 +852,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5F5E70C65B09937ADA56E7B01F6D7CBB /* Build configuration list for PBXNativeTarget "DSLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8C465DC5F6B4ACA5DB71DEA81E732BE /* Debug */,
+				147ED1E0816C4A79DE94B5CDB24B6F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6F0A23F097FE1427A1043BCDA2731024 /* Build configuration list for PBXNativeTarget "Pods-DSLocationDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAE4684C22037CB8D2109E3F24A1C229 /* Debug */,
 				E0AA4BD4A85AF72BFA61D107A6BCEF1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E49AB0C90F7DEDDEA0ADB29063A6D636 /* Build configuration list for PBXNativeTarget "DSLocation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				713424E8986F4CD25148F04078B00283 /* Debug */,
-				FC775CFF84E4FB47666A3CFD155A43D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

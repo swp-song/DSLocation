@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         location.ds.locationMode = .DSLocationRequestAlwaysAuthorization
 //        location.ds.locationManager.delegate = self
         location.ds.startUpdatingLocation()
-        
+        let l =  CLLocationCoordinate2DMake(0, 0)
+//        let p = DSLocationModel(placemark: CLPlacemark(), WGS84: l, GCJ02: l, BD09: l)
         
 //        location.didUpdateLocations
     }
