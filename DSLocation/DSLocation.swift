@@ -18,31 +18,15 @@ open class DSLocation: NSObject {
     lazy var locationManager : CLLocationManager = CLLocationManager()
     var locationMode : DSLocationMode = .DSLocationRequestWhenInUseAuthorization
     
+    lazy var geocoder : CLGeocoder = CLGeocoder()
+    
     override public init() {
         super.init()
-        
-//        if #available(iOS 14.0, *) {
-////            self.ds.locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise")
-//            self.ds.locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise") { (error) in
-//
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        }
-        
         setup()
     }
     
     func setup() -> Void {
         locationManager.distanceFilter = 300
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        if #available(iOS 14.0, *) {
-            locationManager.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "precise") { (error) in
-                print(error)
-            }
-        } else {
-            // Fallback on earlier versions
-        }
         locationManager.delegate = self
     }
 }
@@ -57,6 +41,7 @@ public extension DS where DSBase : DSLocation {
         set { self.ds.locationMode = newValue }
         get { self.ds.locationMode }
     }
+    
 }
 
 public extension DS where DSBase : DSLocation {
@@ -201,8 +186,19 @@ extension DSLocation : CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.ds.stopUpdatingLocation()
-        if let location = locations.first {
-            print(location)
+        if let location = locations.last {
+            
+            geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+                if let placemark = placemarks?.first  {
+                    let WGS84 = location.coordinate
+                    let GCJ02 = self.ds.transformWGS84ToGCJ02(location.coordinate)
+                    let BD09  = CLLocationCoordinate2DMake(0, 0)
+                    _ = DSLocationModel(placemark: placemark, WGS84: WGS84, GCJ02: GCJ02, BD09: BD09)
+                    print("WGS84 = \n \(WGS84.longitude), \(WGS84.latitude)")
+                    print("GCJ02 = \n \(GCJ02.longitude), \(GCJ02.latitude)")
+                }
+                
+            }
         }
     }
     
