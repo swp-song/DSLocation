@@ -9,16 +9,25 @@ import UIKit
 import DSBase
 import CoreLocation
 
-public enum DSLocationMode {
-    case DSLocationRequestWhenInUseAuthorization
-    case DSLocationRequestAlwaysAuthorization
-}
+
+
+public typealias DSLocationSuccessHandler = (_ model: DSLocationModel, _ error: Error?) -> Void
+
+public typealias DSLocationErrorHandler = (_ manager: CLLocationManager, _ error: Error) -> Void
+
 open class DSLocation: NSObject {
     
-    lazy var locationManager : CLLocationManager = CLLocationManager()
-    var locationMode : DSLocationMode = .DSLocationRequestWhenInUseAuthorization
+    public enum DSLocationMode {
+        case DSLocationRequestWhenInUseAuthorization
+        case DSLocationRequestAlwaysAuthorization
+    }
     
-    lazy var geocoder : CLGeocoder = CLGeocoder()
+    lazy var locationManager: CLLocationManager = CLLocationManager()
+    var locationMode: DSLocationMode = .DSLocationRequestWhenInUseAuthorization
+    lazy var geocoder: CLGeocoder = CLGeocoder()
+    var locationSuccess: DSLocationSuccessHandler?
+    var locationError: DSLocationErrorHandler?
+    
     
     override public init() {
         super.init()
@@ -32,20 +41,27 @@ open class DSLocation: NSObject {
 }
 
 
-public extension DS where DSBase : DSLocation {
+public extension DS where DSBase: DSLocation {
     
-    var locationManager : CLLocationManager {
+    var locationManager: CLLocationManager {
         self.ds.locationManager
     }
     
-    var locationMode : DSLocationMode {
+    var locationMode: DSLocation.DSLocationMode {
         set { self.ds.locationMode = newValue }
         get { self.ds.locationMode }
+    }
+    
+
+    var locationSuccess: DSLocationSuccessHandler? {
+        set { self.ds.locationSuccess = newValue }
+        get { self.ds.locationSuccess }
     }
 }
 
 
-public extension DS where DSBase : DSLocation {
+public extension DS where DSBase: DSLocation {
+    
     func startUpdatingLocation() -> Void {
         
         switch self.ds.locationMode {
@@ -63,8 +79,14 @@ public extension DS where DSBase : DSLocation {
     func stopUpdatingLocation() -> Void {
         self.ds.locationManager.stopUpdatingLocation()
     }
+    
+    
+    func locationSuccess(_ locationSuccess: @escaping DSLocationSuccessHandler) -> Void {
+        self.ds.locationSuccess = locationSuccess
+    }
+    
 }
-public extension DS where DSBase : DSLocation {
+public extension DS where DSBase: DSLocation {
 
     // MARK: -----------------------------------------
     
@@ -73,7 +95,7 @@ public extension DS where DSBase : DSLocation {
     ///   - latitude:  WGS84 latitude
     ///   - longitude: WGS84 longitude
     /// - Returns: GCJ02 location
-    @discardableResult func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult func transformWGS84ToGCJ02(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         return Self.transformWGS84ToGCJ02(latitude, longitude);
     }
     
@@ -81,7 +103,7 @@ public extension DS where DSBase : DSLocation {
     /// Transform WGS84 to GCJ02
     /// - Parameter location: WGS84 location
     /// - Returns: GCJ02 location
-    @discardableResult func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult func transformWGS84ToGCJ02(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return Self.transformWGS84ToGCJ02(location);
     }
     
@@ -91,7 +113,7 @@ public extension DS where DSBase : DSLocation {
     ///   - latitude:  GCJ02 latitude
     ///   - longitude: GCJ02 longitude
     /// - Returns: BD09 location
-    @discardableResult func transformGCJ02ToBD09(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult func transformGCJ02ToBD09(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         return Self.transformGCJ02ToBD09(latitude, longitude)
     }
     
@@ -99,13 +121,13 @@ public extension DS where DSBase : DSLocation {
     /// Transform GCJ02 to BD09
     /// - Parameter location: GCJ02 location
     /// - Returns: BD09 location
-    @discardableResult func transformGCJ02ToBD09(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult func transformGCJ02ToBD09(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return Self.transformGCJ02ToBD09(location.latitude, location.longitude)
     }
     
 }
 
-public extension DS where DSBase : DSLocation  {
+public extension DS where DSBase: DSLocation  {
     // MARK: --
     
     /// Transform WGS84 to GCJ02
@@ -113,14 +135,14 @@ public extension DS where DSBase : DSLocation  {
     ///   - latitude:  WGS84 latitude
     ///   - longitude: WGS84 longitude
     /// - Returns: GCJ02 location
-    @discardableResult static func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformWGS84ToGCJ02(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         return DSLocationUtil.transformWGS84ToGCJ02(latitude, longitude)
     }
     
     /// Transform WGS84 to GCJ02
     /// - Parameter location: WGS84
     /// - Returns: GCJ02
-   @discardableResult static func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+   @discardableResult static func transformWGS84ToGCJ02(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return DSLocationUtil.transformWGS84ToGCJ02(location.latitude, location.longitude)
    }
     
@@ -129,21 +151,21 @@ public extension DS where DSBase : DSLocation  {
     ///   - latitude:  GCJ02 latitude
     ///   - longitude: GCJ02 longitude
     /// - Returns: BD09 location
-    @discardableResult static func transformGCJ02ToBD09(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToBD09(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         return DSLocationUtil.transformGCJ02ToBD09(latitude, longitude)
     }
     
     /// Transform GCJ02 to BD09
     /// - Parameter location: GCJ02 location
     /// - Returns: BD09 location
-    @discardableResult static func transformGCJ02ToBD09(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToBD09(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return DSLocationUtil.transformGCJ02ToBD09(location)
     }
     
 }
 
 
-extension DSLocation : CLLocationManagerDelegate {
+extension DSLocation: CLLocationManagerDelegate {
     
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -168,14 +190,13 @@ extension DSLocation : CLLocationManagerDelegate {
         if let location = locations.last {
             
             geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-                if let placemark = placemarks?.first  {
-                    let WGS84 = location.coordinate
-                    let GCJ02 = self.ds.transformWGS84ToGCJ02(location.coordinate)
-                    let BD09  = self.ds.transformGCJ02ToBD09(GCJ02)
-                    _ = DSLocationModel(placemark: placemark, WGS84: WGS84, GCJ02: GCJ02, BD09: BD09)
-                    print("WGS84 = \n\(WGS84.longitude), \(WGS84.latitude)")
-                    print("GCJ02 = \n\(GCJ02.longitude), \(GCJ02.latitude)")
-                    print("BD09  = \n\(BD09.longitude), \(BD09.latitude)")
+                if let placemark = placemarks?.first {
+                    let wgs84 = location.coordinate
+                    let gcj02 = self.ds.transformWGS84ToGCJ02(location.coordinate)
+                    let bd09  = self.ds.transformGCJ02ToBD09(gcj02)
+                    let model = DSLocationModel(placemark, wgs84: wgs84, gcj02: gcj02, bd09: bd09)
+                    self.locationSuccess?(model, error)
+                    
                 }
                 
             }
@@ -183,13 +204,12 @@ extension DSLocation : CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        self.locationError?(manager, error)
     }
     
-   
 }
 
-extension DSLocation : DSCompatible { }
+extension DSLocation: DSCompatible { }
 
 
 

@@ -5,14 +5,9 @@
 //  Created by Dream on 2020/12/10.
 //
 
-//import UIKit
-
-
 import CoreLocation.CLLocation
 
-struct DSLocationUtil {
-    
-}
+struct DSLocationUtil { }
 
 extension DSLocationUtil {
     
@@ -23,7 +18,7 @@ extension DSLocationUtil {
     ///   - latitude: WGS84 latitude
     ///   - longitude: WGS84 longitude
     /// - Returns: GCJ02 location
-    @discardableResult static func transformWGS84ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformWGS84ToGCJ02(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let a = 6378245.0
         let e = 0.00669342162296594323
         let pi = Double.pi
@@ -46,7 +41,7 @@ extension DSLocationUtil {
     /// Transform WGS84 to GCJ02
     /// - Parameter location: WGS84
     /// - Returns: GCJ02 location
-    @discardableResult static func transformWGS84ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformWGS84ToGCJ02(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return transformWGS84ToGCJ02(location.latitude, location.longitude)
     }
     
@@ -55,7 +50,7 @@ extension DSLocationUtil {
     ///   - latitude:  WGS84 latitude
     ///   - longitude: WGS84 longitude
     /// - Returns: BD09 location
-    @discardableResult static func transformWGS84ToBD09(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformWGS84ToBD09(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let GCJ02 = transformWGS84ToGCJ02(latitude, longitude)
         let BD09  = transformGCJ02ToBD09(GCJ02.latitude, GCJ02.longitude)
         return BD09
@@ -64,7 +59,7 @@ extension DSLocationUtil {
     /// Transform WGS84 to BD09
     /// - Parameter location: WGS84
     /// - Returns: BD09 location
-    @discardableResult static func transformWGS84ToBD09(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformWGS84ToBD09(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         let GCJ02 = transformWGS84ToGCJ02(location)
         let BD09  = transformGCJ02ToBD09(GCJ02)
         return BD09
@@ -77,7 +72,7 @@ extension DSLocationUtil {
     ///   - latitude:  GCJ02 latitude
     ///   - longitude: GCJ02 longitude
     /// - Returns: BD09 location
-    @discardableResult static func transformGCJ02ToBD09(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToBD09(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let pi = Double.pi
         let z = sqrt(longitude * longitude + latitude * latitude) + 0.00002 * sqrt(latitude * pi)
         let t = atan2(latitude, longitude) + 0.000003 * cos(longitude * pi)
@@ -87,7 +82,7 @@ extension DSLocationUtil {
     /// Transform GCJ02 to BD09
     /// - Parameter location: GCJ02 location
     /// - Returns: BD09 location
-    @discardableResult static func transformGCJ02ToBD09(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToBD09(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return transformGCJ02ToBD09(location.latitude, location.longitude)
     }
 
@@ -96,7 +91,7 @@ extension DSLocationUtil {
     ///   - latitude:  GCJ02 latitude
     ///   - longitude: GCJ02 longitude
     /// - Returns: WGS84 location
-    @discardableResult static func transformGCJ02ToWGS84(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToWGS84(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         
         let threshold = 0.00001
         // The boundary
@@ -111,7 +106,7 @@ extension DSLocationUtil {
         // Binary search
         while true {
             let leftBottom  = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: minLat, longitude: minLng))
-            let rightBottom = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: minLat, longitude : maxLng))
+            let rightBottom = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: minLat, longitude: maxLng))
             let leftUp      = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: maxLat, longitude: minLng))
             let midPoint    = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2, longitude: (minLng + maxLng) / 2))
             delta = fabs(midPoint.latitude - location.latitude) + fabs(midPoint.longitude - location.longitude)
@@ -142,7 +137,7 @@ extension DSLocationUtil {
     ///   - latitude:  GCJ02 latitude
     ///   - longitude: GCJ02 longitude
     /// - Returns: WGS84 location
-    @discardableResult static func transformGCJ02ToWGS84(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformGCJ02ToWGS84(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let location  = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         return transformGCJ02ToBD09(location)
     }
@@ -155,7 +150,7 @@ extension DSLocationUtil {
     ///   - latitude:  BD09 latitude
     ///   - longitude: BD09 longitude
     /// - Returns: GCJ02 location
-    @discardableResult static func transformBD09ToGCJ02(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformBD09ToGCJ02(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let xpi = Double.pi * 3000.0 / 180.0
         let x = longitude - 0.0065
         let y = latitude  - 0.006
@@ -167,7 +162,7 @@ extension DSLocationUtil {
     /// Transform BD09 to GCJ02
     /// - Parameter location: BD09 location
     /// - Returns: GCJ02 location
-    @discardableResult static func transformBD09ToGCJ02(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformBD09ToGCJ02(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         return transformBD09ToGCJ02(location.latitude, location.longitude)
     }
     
@@ -177,7 +172,7 @@ extension DSLocationUtil {
     ///   - latitude:  BD09 latitude
     ///   - longitude: BD09 longitude
     /// - Returns: WGS84 location
-    @discardableResult static func transformBD09ToWGS84(_ latitude : CLLocationDegrees, _ longitude : CLLocationDegrees) -> CLLocationCoordinate2D {
+    @discardableResult static func transformBD09ToWGS84(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees) -> CLLocationCoordinate2D {
         let GCJ02 = transformBD09ToGCJ02(latitude, longitude)
         let WGS84 = transformGCJ02ToWGS84(GCJ02.latitude, GCJ02.longitude)
         return WGS84
@@ -187,7 +182,7 @@ extension DSLocationUtil {
     /// Transform BD09 to WGS84
     /// - Parameter location: BD09 location
     /// - Returns: WGS84 location
-    @discardableResult static func transformBD09ToWGS84(_ location : CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+    @discardableResult static func transformBD09ToWGS84(_ location: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
         let GCJ02 = transformBD09ToGCJ02(location)
         let WGS84 = transformGCJ02ToWGS84(GCJ02)
         return WGS84
@@ -203,7 +198,7 @@ extension DSLocationUtil {
     ///   - x: latitude   Offset
     ///   - y: longtitude Offset
     /// - Returns: latitude
-    private static func transformLatitude(_ x : Double, _ y : Double) -> Double {
+    private static func transformLatitude(_ x: Double, _ y: Double) -> Double {
         
         let pi = Double.pi
         var latitude = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y
@@ -223,7 +218,7 @@ extension DSLocationUtil {
     ///   - x: latitude   Offset
     ///   - y: longtitude Offset
     /// - Returns: longtitude
-    private static func transformLongitude(_ x : Double, _ y : Double) -> Double {
+    private static func transformLongitude(_ x: Double, _ y: Double) -> Double {
         let pi = Double.pi
         var longtitude = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y
         longtitude +=  0.1 * sqrt(fabs(x))
@@ -236,12 +231,12 @@ extension DSLocationUtil {
         return longtitude
     }
     
-    /// point is it on point1 and point2
+    /// Point is it on point1 and point2
     /// - Parameters:
     ///   - point:  point
     ///   - point1: point1
     ///   - point2: point2
-    /// - Returns:
+    /// - Returns: isContains
     private static func isContainsPoint(_ point:CLLocationCoordinate2D,  point1:CLLocationCoordinate2D, point2: CLLocationCoordinate2D ) -> Bool  {
         let latitudeIn  = point.latitude  >= min(point1.latitude, point2.latitude) && point.latitude <= max(point1.latitude, point2.latitude)
         let longitudeIn = point.longitude >= min(point1.longitude, point2.longitude) && point.longitude <= max(point1.longitude, point2.longitude)

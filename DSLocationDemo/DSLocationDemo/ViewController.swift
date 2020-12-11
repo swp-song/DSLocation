@@ -31,10 +31,21 @@ class ViewController: UIViewController {
         location.ds.locationMode = .DSLocationRequestAlwaysAuthorization
 //        location.ds.locationManager.delegate = self
         location.ds.startUpdatingLocation()
-        let l =  CLLocationCoordinate2DMake(0, 0)
+//        let l =  CLLocationCoordinate2DMake(0, 0)
 //        let p = DSLocationModel(placemark: CLPlacemark(), WGS84: l, GCJ02: l, BD09: l)
         
 //        location.didUpdateLocations
+        
+//        location.ds.locationSuccess
+        
+        location.ds.locationSuccess { (mode, error) in
+        
+            print("wgs84 = \n\(mode.wgs84.longitude),\(mode.wgs84.latitude)")
+            print("gcj02 = \n\(mode.gcj02.longitude),\(mode.gcj02.latitude)")
+            print("bd09  = \n\(mode.bd09.longitude),\(mode.bd09.latitude)")
+        
+        }
+        
     }
 }
 
