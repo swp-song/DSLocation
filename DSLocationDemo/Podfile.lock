@@ -1,6 +1,6 @@
 PODS:
   - DSBase (0.0.5)
-  - DSLocation (0.0.1):
+  - DSLocation (1.0.0):
     - DSBase
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DSBase: 051c4181d892a656e26b6ce094c2ac0a4e6e7f99
-  DSLocation: 751caadaceddaae98b6d8bd78935624d8d866e98
+  DSLocation: 4d242379d09be61cb7c3e6f595d588756eea71ab
 
 PODFILE CHECKSUM: 83e795d3968540f739361f8e0fc7d10974711086
 

@@ -17,11 +17,19 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>我们需要通过您的地理位置信息获取您周边的相关数据</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>我们需要通过您的地理位置信息获取您周边的相关数据</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>使用应用期间</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -64,13 +72,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>我们需要通过您的地理位置信息获取您周边的相关数据</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>我们需要通过您的地理位置信息获取您周边的相关数据</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>使用应用期间</string>
-	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
-	<dict/>
 </dict>
 </plist>

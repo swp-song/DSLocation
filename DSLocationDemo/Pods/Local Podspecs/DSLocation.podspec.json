@@ -1,6 +1,6 @@
 {
   "name": "DSLocation",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "summary": "DSLocation",
   "description": "TODO: DSLocation",
   "homepage": "https://github.com/swp-song/DSLocation",
@@ -16,11 +16,11 @@
   },
   "source": {
     "git": "https://github.com/swp-song/DSLocation.git",
-    "tag": "0.0.1"
+    "tag": "1.0.0"
   },
   "source_files": "DSLocation/**/*.swift",
   "frameworks": [
-    "UIKit",
+    "Foundation",
     "CoreLocation"
   ],
   "requires_arc": true,

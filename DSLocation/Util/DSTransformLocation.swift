@@ -1,15 +1,15 @@
 //
-//  DSLocationUtil.swift
-//  DSLocationDemo
+//  DSTransform.swift
+//  DSLocation
 //
-//  Created by Dream on 2020/12/10.
+//  Created by Dream on 2020/12/13.
 //
 
 import CoreLocation.CLLocation
 
-struct DSLocationUtil { }
+struct DSTransformLocation { }
 
-extension DSLocationUtil {
+extension DSTransformLocation {
     
     // MARK:- WGS84 Transform
     
@@ -103,7 +103,7 @@ extension DSLocationUtil {
         var delta = 1.0
         let maxIteration = 30
         
-        // Binary search
+        // search
         while true {
             let leftBottom  = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: minLat, longitude: minLng))
             let rightBottom = transformWGS84ToGCJ02(CLLocationCoordinate2D(latitude: minLat, longitude: maxLng))
