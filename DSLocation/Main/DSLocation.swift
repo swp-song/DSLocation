@@ -56,6 +56,10 @@ open class DSLocation: NSObject {
     }
 }
 
+extension DSLocation: DSCompatible {
+    
+}
+
 // TODO: -
 public extension DS where DSBase: DSLocation {
     
@@ -220,4 +224,4 @@ extension DSLocation: CLLocationManagerDelegate {
     
 }
 
-extension DSLocation: DSCompatible { }
+
