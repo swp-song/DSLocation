@@ -21,27 +21,36 @@ open class DSLocation: NSObject {
     public typealias DSLocationReverseGeocodeErrorHandler = (_ errorMessage: String?) -> Void
     public typealias DSLocationChangeAuthorizationHandler = (_ manager: CLLocationManager, _ status: CLAuthorizationStatus) -> Void
     
-    // TODO: - 
-    lazy var locationManager: CLLocationManager = CLLocationManager()
-    lazy var geocoder: CLGeocoder = CLGeocoder()
-    weak var delegate: DSLocationDelegate?
-    var locationMode: DSLocationMode = .DSLocationRequestWhenInUseAuthorization
-    var locationChangeAuthorization: DSLocationChangeAuthorizationHandler?
-    var locationSuccess: DSLocationSuccessHandler?
-    var locationError: DSLocationErrorHandler?
-    var locationReverseGeocodeError: DSLocationReverseGeocodeErrorHandler?
+    // TODO: - Private Property
+    fileprivate lazy var locationManager: CLLocationManager = CLLocationManager()
+    fileprivate lazy var geocoder: CLGeocoder = CLGeocoder()
+    fileprivate weak var delegate: DSLocationDelegate?
+    fileprivate var locationMode: DSLocationMode = .DSLocationRequestWhenInUseAuthorization
+    fileprivate var locationChangeAuthorization: DSLocationChangeAuthorizationHandler?
+    fileprivate var locationSuccess: DSLocationSuccessHandler?
+    fileprivate var locationError: DSLocationErrorHandler?
+    fileprivate var locationReverseGeocodeError: DSLocationReverseGeocodeErrorHandler?
 
+    // TODO: - Initialization Method
     
+    /// Init DSLocation
     override public init() {
         super.init()
     }
     
+    
+    /// Init DSLocation
+    /// - Parameter locationMode: DSLocationMode
     public init(_ locationMode: DSLocationMode) {
         super.init()
         self.locationMode = locationMode
     }
     
-    func configure() -> Void {
+    // TODO: - Private Method
+    
+    /// Location Configure
+    /// - Returns:
+    fileprivate func locationConfigure() -> Void {
         locationManager.distanceFilter = 100
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -56,11 +65,9 @@ open class DSLocation: NSObject {
     }
 }
 
-extension DSLocation: DSCompatible {
-    
-}
+extension DSLocation: DSCompatible { }
 
-// TODO: -
+// TODO: - Public Property
 public extension DS where DSBase: DSLocation {
     
     
@@ -110,24 +117,21 @@ public extension DS where DSBase: DSLocation {
     
 }
 
-// TODO: -
+// TODO: - Public Method
 public extension DS where DSBase: DSLocation {
-    
     
     /// Open location
     /// - Returns:
     func open() -> Void {
-        self.ds.configure()
+        self.ds.locationConfigure()
         self.ds.locationManager.startUpdatingLocation()
     }
-    
     
     /// Start Updating Location
     /// - Returns:
     func startUpdatingLocation() -> Void {
         self.ds.locationManager.startUpdatingLocation()
     }
-    
     
     /// Stop Updating Location
     /// - Returns:
@@ -157,7 +161,7 @@ public extension DS where DSBase: DSLocation {
     }
 }
 
-// TODO: - CLLocationManagerDelegate
+// TODO: - CLLocation Manager Delegate
 extension DSLocation: CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

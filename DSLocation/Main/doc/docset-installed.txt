@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/dream/Library/Developer/Shared/Documentation/DocSets/lisong.Test.docset
-Time: 2020-12-13 14:22:29 +0000

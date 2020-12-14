@@ -1,5 +1,5 @@
 PODS:
-  - DSBase (0.0.5)
+  - DSBase (1.0.1)
   - DSLocation (1.0.0):
     - DSBase
 
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DSBase: 051c4181d892a656e26b6ce094c2ac0a4e6e7f99
-  DSLocation: 5a3541a23c3d9bd7319eae065b7d0771ea4a4bfc
+  DSBase: 20e7d49cef125bc7b2225f78b1e269f4ef1594bc
+  DSLocation: c47999a42f5150c050e1b00b0269c2901f2facc9
 
 PODFILE CHECKSUM: 83e795d3968540f739361f8e0fc7d10974711086
 

@@ -6,7 +6,7 @@
 //
 
 public struct DS<DSBase> {
-    public var ds : DSBase
+    public let ds: DSBase
     public init(_ ds : DSBase) {
         self.ds = ds
     }
@@ -16,16 +16,13 @@ public protocol DSCompatible { }
 
 public extension DSCompatible {
     
-    var ds : DS<Self> {
+    var ds: DS<Self> {
         set { }
         get { DS(self) }
     }
     
-    static var ds : DS<Self>.Type {
+    static var ds: DS<Self>.Type {
         set { }
         get { DS<Self>.self }
     }
 }
-
-
-
