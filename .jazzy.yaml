@@ -1,0 +1,17 @@
+author: Dream
+author_url: https://dream-swp.com
+github_url: https://github.com/swp-song/DSLocation
+root_url: https://github.com/swp-song/DSLocation
+module: DSLocation
+output: Documentation
+# theme: fullwidth
+# theme: jony
+theme: apple
+# SMP
+# text: ["--swift-build-tool", "spm"]
+#  jazzy 
+xcodebuild_arguments: ["-project", "DSLocation.xcodeproj", "-scheme", "DSLocation"]
+# jazzy \
+# --module Combine --swift-build-tool symbolgraph \
+# --sdk iphoneos \
+# --build-tool-arguments -target,arm64-apple-ios14.1 \
