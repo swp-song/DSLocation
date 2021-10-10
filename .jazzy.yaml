@@ -3,7 +3,8 @@ author_url: https://dream-swp.com
 github_url: https://github.com/swp-song/DSLocation
 root_url: https://github.com/swp-song/DSLocation
 module: DSLocation
-output: Documentation
+output: docs
+# documentation: Docs/*.md
 # theme: fullwidth
 # theme: jony
 theme: apple
