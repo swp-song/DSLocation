@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "DSLocation", targets: ["DSLocation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swp-song/DSBase.git", .upToNextMajor(from: "2.2.0")),
+        .package(url: "https://github.com/swp-song/DSBase.git", .upToNextMajor(from: "3.0.0")),
     ],
     targets: [
         

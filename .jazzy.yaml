@@ -7,11 +7,8 @@ output: Documentation
 # theme: fullwidth
 # theme: jony
 theme: apple
+min-acl: public
 # SMP
-# text: ["--swift-build-tool", "spm"]
-#  jazzy 
-xcodebuild_arguments: ["-project", "DSLocation.xcodeproj", "-scheme", "DSLocation"]
-# jazzy \
-# --module Combine --swift-build-tool symbolgraph \
-# --sdk iphoneos \
-# --build-tool-arguments -target,arm64-apple-ios14.1 \
+xcodebuild_arguments: ["-project", "Example/Example.xcodeproj", "-scheme", "Example"]
+
+# jazzy 

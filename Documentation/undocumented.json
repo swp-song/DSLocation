@@ -1,0 +1,47 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocation+DataType.swift",
+      "line": 22,
+      "symbol": "DSLocation.LocationModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocation.swift",
+      "line": 11,
+      "symbol": "DSLocation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocation.swift",
+      "line": 11,
+      "symbol": "DSLocation",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocation.swift",
+      "line": 11,
+      "symbol": "DSLocation",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocation.swift",
+      "line": 11,
+      "symbol": "DSLocation",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/Main/DSLocationManagerDelegate.swift",
+      "line": 9,
+      "symbol": "DSLocationManagerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation"
+}

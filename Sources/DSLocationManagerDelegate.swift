@@ -6,7 +6,7 @@
 //
 import CoreLocation
 
-@objc public protocol DSLocationDelegate: NSObjectProtocol {
+@objc public protocol DSLocationManagerDelegate: NSObjectProtocol {
     
     ///  Location Change Authorization
     /// - Parameters:
@@ -19,7 +19,7 @@ import CoreLocation
     /// - Parameters:
     ///   - model: Location sussess datas
     ///   - error: error
-    @objc optional func locationSuccess(_ model: DSLocationModel, didUpdateLocations error: Error?) -> Void
+    @objc optional func locationSuccess(_ model: DSLocation.LocationModel, didUpdateLocations error: Error?) -> Void
     
     
     ///  Location fail error
