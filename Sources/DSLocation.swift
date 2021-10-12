@@ -20,6 +20,8 @@ public class DSLocation: NSObject {
     weak var delegate: DSLocationManagerDelegate?
     /// LocationMode, Define = WhenInUseAuthorization
     var locationAuthorization: LocationAuthorization = .WhenInUseAuthorization
+    /// Location, Start Location, Define = false, 是否开启定位
+    var isStartLocation: Bool = false
     /// Location Change Authorization Callback, 定位授权改变回调
     var locationChangeAuthorization: LocationChangeAuthorizationHandler?
     /// Location, Success Callback, 定位成功回调
@@ -39,7 +41,7 @@ public class DSLocation: NSObject {
     
     /// Init DSLocation
     /// - Parameter locationMode: LocationMode
-    public init(_ locationAuthorization: LocationAuthorization) {
+     public init(_ locationAuthorization: LocationAuthorization) {
         super.init()
         self.locationAuthorization = locationAuthorization
     }
@@ -69,10 +71,7 @@ extension DSLocation  {
     ///   - location:  location
     /// - Returns: LocationModel
     func reverseGeocodeDataConversion(_ placemark: CLPlacemark, _ location: CLLocation) -> LocationModel {
-        let wgs84 = location.coordinate
-        let gcj02 = wgs84.ds.wgs84_gcj02
-        let bd09  = gcj02.ds.gcj02_bd09
-        let locationModel = LocationModel(placemark, location: location, wgs84: wgs84, gcj02: gcj02, bd09: bd09)
+        let locationModel = LocationModel(placemark, location: location)
         return locationModel
     }
     
@@ -90,7 +89,7 @@ extension DSLocation  {
             guard let placemark = placemarks?.first else {
                 messageError = "placemarks data parsing error"
                 self?.locationReverseGeocodeError?("placemarks data parsing error")
-                self!.delegate?.locationReverseGeocodeError?(messageError)
+                self?.delegate?.locationReverseGeocodeError?(messageError)
                 return
             }
             
@@ -142,7 +141,7 @@ extension DSLocation: CLLocationManagerDelegate {
     ///   - manager:     CLLocationManager
     ///   - locations:  [CLLocation]
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.stopUpdatingLocation()
+        ds.stopUpdating()
         
         var messageError: String?
         guard let location = locations.last else {

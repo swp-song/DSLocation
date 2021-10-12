@@ -21,10 +21,12 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet private weak var detailedLabel: UILabel!
     
     lazy var location: DSLocation = {
         var location = DSLocation(.WhenInUseAuthorization)
         location.ds.open()
+        location.ds.delegate = self
         return location
     }()
     
@@ -32,28 +34,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        locationCallback(location)
+    }
+    
+}
 
+extension ViewController {
+    
+    @IBAction func selectedStartButton(_ button: UIButton) {
+        location.ds.startUpdating()
+    }
+}
+
+extension ViewController {
+    
+    func locationCallback(_ location: DSLocation) -> Void {
         
         location.ds.locationChangeAuthorization { manager, status in
-            print("\(status)")
+            
         }
         
-        location.ds.locationSuccess { model, error in
-            print(model)
-            print("wgs84 = \(model.wgs84.longitude),\(model.wgs84.latitude)")
-            print("gcj02 = \(model.gcj02.longitude),\(model.gcj02.latitude)")
-            print("bd09 = \(model.bd09.longitude),\(model.bd09.latitude)")
-            print("1213")
-            let d =  CLLocationCoordinate2DMake(39.915107, 116.403933)
-            let w = d.ds.bd09_wgs84;
-            print(w);
+        location.ds.locationSuccess { [weak self] model, error in
+            
+            print("--------------------------------------------------")
+            print(#function)
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 5
+            self?.detailedLabel.attributedText =  NSMutableAttributedString(string: model.description, attributes: [.paragraphStyle : style, .font : UIFont.systemFont(ofSize: 15)])
+            print("--------------------------------------------------")
         }
         
         location.ds.locationError { manager, error in
-            print(error)
+            
         }
         
     }
-
 }
 
+extension ViewController: DSLocationManagerDelegate {
+ 
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+    }
+    
+    func locationSuccess(_ model: DSLocation.LocationModel, didUpdateLocations error: Error?) {
+        print("--------------------------------------------------")
+        print(#function)
+        print(model)
+        print("--------------------------------------------------")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    
+}

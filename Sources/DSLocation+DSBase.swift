@@ -28,6 +28,12 @@ public extension DS where DSBase: DSLocation {
         get { ds.locationAuthorization }
     }
     
+    /// Location, Start Location, Define = false, 是否开启定位
+    var isStartLocation: Bool {
+        set { ds.isStartLocation = newValue }
+        get { ds.isStartLocation }
+    }
+    
     /// Location Change Authorizati Callback, 定位授权改变回调
     var locationChangeAuthorization: DSLocation.LocationChangeAuthorizationHandler? {
         set { ds.locationChangeAuthorization = newValue }
@@ -60,17 +66,19 @@ public extension DS where DSBase: DSLocation {
     /// Open Location, 打开定位
     func open() -> Void {
         ds.locationConfigure()
-        ds.locationManager.startUpdatingLocation()
+        startUpdating()
     }
     
     /// Start Updating, 定位开始更新
     func startUpdating() -> Void {
         ds.locationManager.startUpdatingLocation()
+        ds.isStartLocation = true
     }
     
     /// Stop Updating, 定位停止更新
     func stopUpdating() -> Void {
         ds.locationManager.stopUpdatingLocation()
+        ds.isStartLocation = false
     }
     
     /// Location Change Authorizati Callback, 定位授权改变回调

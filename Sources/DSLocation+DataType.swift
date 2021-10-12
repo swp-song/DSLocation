@@ -32,19 +32,49 @@ public extension DSLocation {
         /// latitude and longitude, bd09  location
         private(set) public var bd09: CLLocationCoordinate2D
         
-        ///
-        /// - Parameters:
-        ///   - placemark:  placemark
-        ///   - location:   location
-        ///   - wgs84:      wgs84 location
-        ///   - gcj02:      gcj02 location
-        ///   - bd09:       bd09  location
-        init (_ placemark: CLPlacemark, location: CLLocation, wgs84: CLLocationCoordinate2D, gcj02: CLLocationCoordinate2D, bd09: CLLocationCoordinate2D) {
+        init (_ placemark: CLPlacemark, location: CLLocation) {
+    
             self.placemark = placemark
-            self.location = location
-            self.wgs84 = wgs84
-            self.gcj02 = gcj02
-            self.bd09  = bd09
+            self.location  = location
+            self.wgs84     = location.coordinate
+            self.gcj02     = self.wgs84.ds.wgs84_gcj02
+            self.bd09      = self.gcj02.ds.gcj02_bd09
+            
+        }
+        
+        public override var description: String {
+            var string = ""
+            
+            string.append("wgs84 = \(self.wgs84) \r")
+            string.append("gcj02 = \(self.gcj02) \r")
+            string.append("bd09  = \(self.bd09)  \r")
+            string.append("Address = ")
+        
+            if let name = self.placemark.name {
+                string.append("\(name), ")
+            }
+            
+            if let country = self.placemark.country {
+                string.append("\(country)")
+            }
+            
+            if let administrativeArea = self.placemark.administrativeArea {
+                string.append("\(administrativeArea)")
+            }
+            
+            if let city = self.placemark.locality {
+                string.append("\(city)")
+            }
+    
+            if let subLocality = self.placemark.subLocality {
+                string.append("\(subLocality)")
+            }
+            
+            if let thoroughfare = self.placemark.thoroughfare {
+                string.append("\(thoroughfare)")
+            }
+            
+            return string;
         }
     }
     

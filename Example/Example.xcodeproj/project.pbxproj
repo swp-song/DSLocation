@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15ACE5F2712030400FACFFB /* DSLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1340FBE27109E5B00142DAE /* DSLocation.framework */; };
 		F15ACE602712030400FACFFB /* DSLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1340FBE27109E5B00142DAE /* DSLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F181CEBF2715FA05003EE5C1 /* DSLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1340FBE27109E5B00142DAE /* DSLocation.framework */; };
 		F1A577A72710913200E3E967 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A5779B2710913200E3E967 /* LaunchScreen.storyboard */; };
 		F1A577A82710913200E3E967 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A5779D2710913200E3E967 /* Main.storyboard */; };
 		F1A577A92710913200E3E967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A577A02710913200E3E967 /* Assets.xcassets */; };
@@ -50,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		F1340FB827109E5B00142DAE /* DSLocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DSLocation.xcodeproj; path = ../DSLocation.xcodeproj; sourceTree = "<group>"; };
-		F1A3135A2711A446009B99DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A313622711DE18009B99DF /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		F1A577822710894800E3E967 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A5779C2710913200E3E967 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,21 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15ACE5F2712030400FACFFB /* DSLocation.framework in Frameworks */,
+				F181CEBF2715FA05003EE5C1 /* DSLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F1340F7A2710977A00142DAE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F1A3135A2711A446009B99DF /* Foundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F1340FB927109E5B00142DAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +80,13 @@
 				F1340FC027109E5B00142DAE /* DSLocation Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F181CEBE2715FA05003EE5C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F1A3135D2711A594009B99DF /* Resource */ = {
@@ -105,9 +103,9 @@
 				F1A577992710913200E3E967 /* Application */,
 				F1A577A52710913200E3E967 /* Code */,
 				F1A3135D2711A594009B99DF /* Resource */,
-				F1340F7A2710977A00142DAE /* Frameworks */,
-				F1340FB827109E5B00142DAE /* DSLocation.xcodeproj */,
 				F1A577832710894800E3E967 /* Products */,
+				F181CEBE2715FA05003EE5C1 /* Frameworks */,
+				F1340FB827109E5B00142DAE /* DSLocation.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,10 +407,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = 3U34V92LTL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Application/Resource/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我们需要通过您的地理位置信息获取您周边的相关数据";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "我们需要通过您的地理位置信息获取您周边的相关数据";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "使用应用期间";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -423,8 +424,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-ds.location.Example";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-ds.location.example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -438,10 +439,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = 3U34V92LTL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Application/Resource/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我们需要通过您的地理位置信息获取您周边的相关数据";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "我们需要通过您的地理位置信息获取您周边的相关数据";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "使用应用期间";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -452,8 +456,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-ds.location.Example";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-ds.location.example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

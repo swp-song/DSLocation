@@ -8,6 +8,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/DSLocation+DataType.swift",
+      "line": 45,
+      "symbol": "DSLocation.LocationModel.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/dream/Desktop/Code/GitHub/Dream/DSLocation/Sources/DSLocation.swift",
       "line": 11,
       "symbol": "DSLocation",
