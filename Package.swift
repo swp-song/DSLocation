@@ -23,7 +23,6 @@ let package = Package(
             linkerSettings:[
                 .linkedFramework("Foundation", .when(platforms: [.iOS])),
                 .linkedFramework("CoreLocation", .when(platforms: [.iOS])),
-                .linkedFramework("DSBase", .when(platforms: [.iOS]))
             ]
         ),
         
