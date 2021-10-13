@@ -8,8 +8,8 @@
 import Foundation
 import CoreLocation
 
+/// - DSLocation
 public class DSLocation: NSObject {
-    
     
     // MARK: - DSLocation Internal
     /// CLLocationManager

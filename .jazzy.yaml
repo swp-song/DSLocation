@@ -8,8 +8,6 @@ output: docs
 # theme: fullwidth
 # theme: jony
 theme: apple
-min-acl: public
-# SMP
 xcodebuild_arguments: ["-project", "Example/Example.xcodeproj", "-scheme", "Example"]
 
 # jazzy 

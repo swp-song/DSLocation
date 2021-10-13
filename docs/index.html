@@ -16,7 +16,7 @@
     <a title="DSLocation  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">DSLocation 2.0.0 Docs</a> (86% documented)</p>
+        <p><a href="index.html">DSLocation 2.0.1 Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/swp-song/DSLocation"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fgithub.com%2Fswp-song%2FDSLocation%2Fdocsets%2FDSLocation.xml"><img src="img/dash.png"/>Install in Dash</a></p>
         <p class="header-right">
@@ -76,8 +76,43 @@
           <section class="section">
             
             <h1 id='dslocation' class='heading'>DSLocation</h1>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
 
-<p>DSLocation</p>
+<ul>
+<li>Installation with Swift Package Manager</li>
+</ul>
+<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/swp-song/DSLocation.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"2.0.1"</span><span class="p">))</span>
+<span class="p">]</span>
+</code></pre>
+
+<hr>
+
+<p>### Installation CocoaPods </p>
+
+<ul>
+<li>Installation CocoaPods :</li>
+</ul>
+<pre class="highlight plaintext"><code>pod search DSLocation
+pod 'DSLocation'
+</code></pre>
+
+<hr>
+<h3 id='location-privacy-config' class='heading'>Location Privacy Config</h3>
+<pre class="highlight swift"><code><span class="kt">Privacy</span> <span class="o">-</span> <span class="kt">Location</span> <span class="kt">Always</span> <span class="n">and</span> <span class="kt">When</span> <span class="kt">In</span> <span class="kt">Use</span> <span class="kt">Usage</span> <span class="kt">Description</span> <span class="p">:</span> <span class="n">我们需要通过您的地理位置信息获取您周边的相关数据</span>
+<span class="kt">Privacy</span> <span class="o">-</span> <span class="kt">Location</span> <span class="kt">Always</span> <span class="kt">Usage</span> <span class="kt">Description</span>                 <span class="p">:</span> <span class="n">我们需要通过您的地理位置信息获取您周边的相关数据</span>
+<span class="kt">Privacy</span> <span class="o">-</span> <span class="kt">Location</span> <span class="kt">When</span> <span class="kt">In</span> <span class="kt">Use</span> <span class="kt">Usage</span> <span class="kt">Description</span>            <span class="p">:</span> <span class="n">使用应用期间</span>
+</code></pre>
+
+<hr>
+<h3 id='坐标拾取系统' class='heading'>坐标拾取系统：</h3>
+
+<ul>
+<li><a href="%20https://lbs.amap.com/console/show/picker">高德坐标拾取器</a></li>
+<li><a href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度坐标拾取器</a></li>
+</ul>
+
+<hr>
 
           </section>
         </section>
