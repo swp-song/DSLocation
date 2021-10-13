@@ -18,7 +18,7 @@ public extension DSLocation {
         case AlwaysAuthorization
     }
     
-
+    /// Location Model
     class LocationModel: NSObject {
 
         /// placemark

@@ -6,7 +6,7 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swp-song/DSLocation.git", .upToNextMajor(from: "2.0.1"))
+    .package(url: "https://github.com/swp-song/DSLocation.git", .upToNextMajor(from: "2.0.2"))
 ]
 ```
 
@@ -34,7 +34,7 @@ Privacy - Location When In Use Usage Description            : 使用应用期间
 
 ### 坐标拾取系统：
 
-* [高德坐标拾取器](%20https://lbs.amap.com/console/show/picker)
+* [高德坐标拾取器](https://lbs.amap.com/console/show/picker)
 * [百度坐标拾取器](https://api.map.baidu.com/lbsapi/getpoint/index.html)
 
 -----
